@@ -1,17 +1,12 @@
-from flask import Flask, request, abort
-import requests
-import os
+# Server (main.py) - token serverda yashiringan
+from flask import Flask
+import requests, os
 
 app = Flask(__name__)
 
-SECRET_TOKEN = os.getenv("SECRET_TOKEN")
-
 @app.route('/run')
 def run():
-    token = request.args.get("token")
-    if token != SECRET_TOKEN:
-        abort(403)
-
+    # Hamma maxfiy ma'lumotlar faqat serverda
     api_dev_key = os.getenv("API_DEV_KEY")
     username = os.getenv("PASTEBIN_USERNAME")
     password = os.getenv("PASTEBIN_PASSWORD")
