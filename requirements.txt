@@ -1,4 +1,3 @@
-project/
-├── app.py
-├── requirements.txt
-└── render.yaml
+flask
+requests
+gunicorn
